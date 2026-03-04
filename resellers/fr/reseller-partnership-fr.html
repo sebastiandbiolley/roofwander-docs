@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roofwander — Programme Partenariat Revendeurs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root { color-scheme: light; }
+    *{
+      box-sizing:border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    @page { size: A4; margin: 10mm; }
+    html, body { height: 100%; }
+
+    .page, header, section, .cards, .card, .cta, footer {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:#f3f7f3;
+      color:#111827;
+    }
+
+    .page{
+      max-width:1120px;
+      margin:0 auto;
+      padding:18px;
+    }
+
+    .sheet{
+      background:#ffffff;
+      border:1px solid #e6f0ea;
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+      overflow:hidden;
+    }
+
+    .bar{
+      height:8px;
+      background:linear-gradient(90deg,#2F6F4E,#1b4332);
+    }
+
+    header{
+      padding:18px 22px 14px 22px;
+    }
+
+    h1{
+      margin:0 0 6px 0;
+      font-size:28px;
+      line-height:1.12;
+      letter-spacing:-0.02em;
+      color:#1b4332;
+    }
+
+    .subtitle{
+      margin:0;
+      font-size:13.5px;
+      line-height:1.5;
+      color:#374151;
+    }
+
+    .meta{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      font-size:12.5px;
+      color:#6b7280;
+    }
+
+    .meta a{
+      color:#2F6F4E;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .meta a:hover{ text-decoration:underline; }
+
+    .divider{
+      height:1px;
+      background:#e6f0ea;
+      margin:0;
+    }
+
+    section{
+      padding:14px 22px;
+    }
+
+    h2{
+      margin:0 0 8px 0;
+      font-size:16px;
+      line-height:1.2;
+      color:#2F6F4E;
+      letter-spacing:-0.01em;
+    }
+
+    .who{
+      margin:0;
+      font-size:13.5px;
+      line-height:1.55;
+      color:#374151;
+    }
+
+    .cards{
+      padding:14px 22px 16px 22px;
+    }
+
+    /* 2 cards */
+    .cards-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      align-items:stretch;
+    }
+
+    .card{
+      background:#f6fbf7;
+      border:1px solid #d8eee0;
+      border-radius:16px;
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      min-height:230px;
+    }
+
+    .card-title{
+      margin:0 0 8px 0;
+      font-size:14px;
+      line-height:1.25;
+      font-weight:800;
+      color:#1b4332;
+    }
+
+    .card p{
+      margin:0 0 8px 0;
+      font-size:12.8px;
+      line-height:1.5;
+      color:#374151;
+    }
+
+    .card ul{
+      margin:0 0 8px 18px;
+      padding:0;
+      font-size:12.8px;
+      line-height:1.5;
+      color:#374151;
+    }
+
+    .small{
+      margin-top:auto;
+      font-size:11.8px;
+      line-height:1.35;
+      color:#6b7280;
+    }
+
+    .examples a{
+      color:#2F6F4E;
+      text-decoration:none;
+      font-weight:800;
+    }
+    .examples a:hover{ text-decoration:underline; }
+
+    .cta{
+      padding:16px 22px;
+      background:linear-gradient(135deg,#2F6F4E,#1b4332);
+      color:#ffffff;
+      text-align:center;
+    }
+
+    .cta h3{
+      margin:0 0 6px 0;
+      font-size:16px;
+      letter-spacing:-0.01em;
+    }
+
+    .cta p{
+      margin:0 0 10px 0;
+      font-size:12.8px;
+      line-height:1.5;
+      opacity:0.95;
+    }
+
+    .cta a{
+      color:#ffffff;
+      text-decoration:underline;
+      font-weight:900;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:8px;
+      padding:10px 18px;
+      border-radius:999px;
+      background:#ffffff;
+      color:#1b4332 !important;
+      text-decoration:none !important;
+      font-weight:900;
+      font-size:12.8px;
+    }
+
+    footer{
+      padding:10px 22px 14px 22px;
+      font-size:11.8px;
+      color:#6b7280;
+      text-align:center;
+      background:#ffffff;
+    }
+
+    @media print{
+      body{ background:#ffffff !important; }
+      .page{ padding:0 !important; }
+      .sheet{ box-shadow:none !important; }
+      a, a:visited{ color:#2F6F4E; }
+      .cta a, .btn{ color:inherit; }
+    }
+
+    @media (max-width: 900px){
+      .cards-grid{ grid-template-columns:1fr; }
+      .card{ min-height:auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="sheet">
+      <div class="bar"></div>
+
+      <header>
+        <h1>Roofwander — Programme Partenariat Revendeurs</h1>
+        <p class="subtitle">
+          Une façon simple d'activer votre clientèle et de générer des revenus en redirigeant propriétaires et locataires vers Roofwander.
+        </p>
+
+        <div class="meta">
+          <span>Site : <a href="https://roofwander.com/fr" target="_blank">roofwander.com/fr</a></span>
+          <span>Blog : <a href="https://roofwander.com/fr/blog" target="_blank">roofwander.com/fr/blog</a></span>
+          <span>Contact : <a href="mailto:contact@roofwander.com">contact@roofwander.com</a></span>
+        </div>
+      </header>
+
+      <div class="divider"></div>
+
+      <section>
+        <h2>Qui sommes-nous</h2>
+        <p class="who">
+          Roofwander est une marketplace de location de tentes de toit qui met en relation propriétaires et locataires.
+          Nous aidons les propriétaires à amortir le coût de leur tente en la louant lorsqu'ils ne l'utilisent pas, tout en rendant les aventures en tente de toit plus accessibles.
+        </p>
+      </section>
+
+      <div class="divider"></div>
+
+      <div class="cards">
+        <h2 style="margin-bottom:10px;">Options de partenariat</h2>
+
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">1) Partenariat performance (lien traçable)</div>
+            <p>
+              Notre objectif est simple : faire venir plus de propriétaires de tentes de toit sur Roofwander.
+              Si vous avez des propriétaires dans votre clientèle ou newsletter, envoyez-les via un lien traçable.
+            </p>
+            <p><strong>Structure exemple :</strong></p>
+            <ul>
+              <li>20 € par annonce de propriétaire</li>
+              <li>20 € par réservation effectuée</li>
+            </ul>
+            <p>
+              Si quelqu'un contacte votre magasin pour louer une tente, redirigez-le vers Roofwander et gagnez 20 € lorsqu'une réservation est effectuée.
+            </p>
+            <div class="small">
+              Flexible et négociable. Ça fonctionne dans les deux sens : les propriétaires peuvent amortir leur tente en la louant, les locataires peuvent tester avant d'acheter.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">2) Visibilité & collaboration (SEO / contenu)</div>
+            <p>
+              Nous pouvons mettre en avant votre magasin sur Roofwander pour booster la visibilité et renforcer le SEO des deux partenaires.
+            </p>
+            <ul>
+              <li>Mention partenaire sur notre site (logo + backlink)</li>
+              <li>Article de blog / guide (avec backlink)</li>
+              <li>Collaboration backlink pour renforcer l'autorité de domaine</li>
+            </ul>
+            <div class="small examples">
+              Exemples : <a href="https://roofwander.com/fr" target="_blank">Site</a> •
+              <a href="https://roofwander.com/fr/blog" target="_blank">Blog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <h3>Prochaine étape</h3>
+        <p>
+          L'idée est simple : lorsque les clients veulent louer une tente de toit ou tester avant d'acheter, envoyez-les vers Roofwander.
+          Réservez un appel de 30 minutes :
+          <a href="https://calendly.com/technology-roofwander/30min" target="_blank">calendly.com/technology-roofwander/30min</a>
+          • Email :
+          <a href="mailto:contact@roofwander.com">contact@roofwander.com</a>
+        </p>
+        <a class="btn" href="https://calendly.com/technology-roofwander/30min" target="_blank">Réserver un appel de 30 min</a>
+      </div>
+
+      <footer>© 2026 Roofwander — Marketplace Tentes de Toit</footer>
+    </div>
+  </div>
+</body>
+</html>

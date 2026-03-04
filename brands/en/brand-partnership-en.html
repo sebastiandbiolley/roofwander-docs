@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roofwander — Brand Partnership Program</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== PDF / Print "one-pager" settings ===== */
+    :root { color-scheme: light; }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    @page { size: A4; margin: 10mm; }   /* tight margins, fills page */
+    html, body { height: 100%; }
+
+    /* Prevent awkward splits (should be 1 page anyway) */
+    .page, header, section, .cards, .card, .cta, footer {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* ===== Layout ===== */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f3f7f3;
+      color: #111827;
+    }
+
+    /* This is a single "page" canvas sized like A4 content area */
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    /* Card-like sheet */
+    .sheet {
+      background: #ffffff;
+      border: 1px solid #e6f0ea;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    /* Top bar */
+    .bar {
+      height: 8px;
+      background: linear-gradient(90deg, #2F6F4E, #1b4332);
+    }
+
+    header {
+      padding: 18px 22px 14px 22px;
+    }
+
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 28px;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: #1b4332;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: #374151;
+    }
+
+    .meta {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      font-size: 12.5px;
+      color: #6b7280;
+    }
+
+    .meta a {
+      color: #2F6F4E;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .meta a:hover { text-decoration: underline; }
+
+    .divider {
+      height: 1px;
+      background: #e6f0ea;
+      margin: 0;
+    }
+
+    section {
+      padding: 14px 22px;
+    }
+
+    h2 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      line-height: 1.2;
+      color: #2F6F4E;
+      letter-spacing: -0.01em;
+    }
+
+    .who {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #374151;
+    }
+
+    /* ===== 3 cards row (pitch-deck style) ===== */
+    .cards {
+      padding: 14px 22px 16px 22px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: #f6fbf7;
+      border: 1px solid #d8eee0;
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      min-height: 220px; /* keeps them even and "deck-like" */
+    }
+
+    .card-title {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      line-height: 1.25;
+      font-weight: 800;
+      color: #1b4332;
+    }
+
+    .card p {
+      margin: 0 0 8px 0;
+      font-size: 12.8px;
+      line-height: 1.5;
+      color: #374151;
+    }
+
+    .card ul {
+      margin: 0 0 8px 18px;
+      padding: 0;
+      font-size: 12.8px;
+      line-height: 1.5;
+      color: #374151;
+    }
+
+    .small {
+      margin-top: auto;
+      font-size: 11.8px;
+      line-height: 1.35;
+      color: #6b7280;
+    }
+
+    .examples a {
+      color: #2F6F4E;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .examples a:hover { text-decoration: underline; }
+
+    /* ===== CTA band ===== */
+    .cta {
+      padding: 16px 22px;
+      background: linear-gradient(135deg, #2F6F4E, #1b4332);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .cta h3 {
+      margin: 0 0 6px 0;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .cta p {
+      margin: 0 0 10px 0;
+      font-size: 12.8px;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    .cta a {
+      color: #ffffff;
+      text-decoration: underline;
+      font-weight: 900;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #1b4332 !important;
+      text-decoration: none !important;
+      font-weight: 900;
+      font-size: 12.8px;
+    }
+
+    footer {
+      padding: 10px 22px 14px 22px;
+      font-size: 11.8px;
+      color: #6b7280;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    /* ===== Print tweaks ===== */
+    @media print {
+      body { background: #ffffff !important; }
+      .page { padding: 0 !important; }
+      .sheet { box-shadow: none !important; }
+      /* keep link colors consistent in print (avoid default blue) */
+      a, a:visited { color: #2F6F4E; }
+      .cta a, .btn { color: inherit; }
+    }
+
+    /* Mobile fallback */
+    @media (max-width: 900px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="sheet">
+      <div class="bar"></div>
+
+      <header>
+        <h1>Roofwander Brand Partnership Program</h1>
+        <p class="subtitle">
+          Three simple ways to collaborate — starting with sharing a trackable link, then expanding to content/SEO and optional map integration.
+        </p>
+
+        <div class="meta">
+          <span>Website: <a href="https://roofwander.com/en" target="_blank">roofwander.com/en</a></span>
+          <span>Blog: <a href="https://roofwander.com/en/blog" target="_blank">roofwander.com/en/blog</a></span>
+          <span>Contact: <a href="mailto:contact@roofwander.com">contact@roofwander.com</a></span>
+        </div>
+      </header>
+
+      <div class="divider"></div>
+
+      <section>
+        <h2>Who We Are</h2>
+        <p class="who">
+          Roofwander is a rooftop tent rental marketplace connecting owners and renters. We help owners offset the cost of their tent by renting it out, while making rooftop tent adventures more accessible.
+        </p>
+      </section>
+
+      <div class="divider"></div>
+
+      <div class="cards">
+        <h2 style="margin-bottom:10px;">Partnership Options</h2>
+
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">1) Performance Partnership (Trackable Link)</div>
+            <p>
+              We provide a unique tracking link you can share via newsletter, website, blog or social. You earn commission on measurable actions.
+            </p>
+            <p><strong>Example structure:</strong></p>
+            <ul>
+              <li>€20 per owner listing</li>
+              <li>€20 per completed booking</li>
+            </ul>
+            <div class="small">Flexible structure depending on your goals and audience.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">2) SEO + Content (+ Social if you want)</div>
+            <p>
+              We publish a dedicated brand feature (blog and/or website page) with links back to you. We can also add your logo as an official partner on our website (with backlink).
+            </p>
+            <p>
+              In exchange, we'd love a mention + link to Roofwander on your website (partners page, blog, or newsletter).
+            </p>
+            <div class="small examples">
+              Examples: <a href="https://roofwander.com/en/blog" target="_blank">Blog</a> •
+              <a href="https://roofwander.com/en" target="_blank">Website</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">3) Live Owner Map Integration (Your Brand Only)</div>
+            <p>
+              We provide a lightweight JSON feed showing owners who list <strong>your brand</strong> tents on Roofwander. Your team can embed a "Find a tent near you" map on your website.
+            </p>
+            <div class="small">
+              Filter by brand, region, or models. Easy developer integration.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <h3>Next step</h3>
+        <p>
+          Let's start simple (share the trackable link) and expand from there.
+          Book a 30-minute call: <a href="https://calendly.com/technology-roofwander/30min" target="_blank">calendly.com/technology-roofwander/30min</a>
+          • Email: <a href="mailto:contact@roofwander.com">contact@roofwander.com</a>
+        </p>
+        <a class="btn" href="https://calendly.com/technology-roofwander/30min" target="_blank">Book a 30-min Call</a>
+      </div>
+
+      <footer>© 2026 Roofwander — Rooftop Tent Marketplace</footer>
+    </div>
+  </div>
+</body>
+</html>
